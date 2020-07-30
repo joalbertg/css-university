@@ -1,0 +1,27 @@
+{
+  "name": "carrito",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp css",
+    "watch": "gulp watch"
+  },
+  "keywords": [],
+  "author": "",
+  "description": "",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chokidar": "3",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.1.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

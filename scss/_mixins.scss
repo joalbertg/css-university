@@ -1,0 +1,43 @@
+/* buttons */
+@mixin boton($color) {
+  background: $color;
+  display: block;
+  padding: .5rem 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: $white;
+}
+
+@mixin box-sizing($box-model) {
+  box-sizing: $box-model;
+}
+
+@mixin background-image($image) {
+  background-image: url($image);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin gradient($startColor, $endColor) {
+  background: linear-gradient(to right, $startColor 0%, $endColor 100%);
+}
+
+/* media queries */
+@mixin phone {
+  @media only screen and (min-width: #{$phone}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}

@@ -1,0 +1,230 @@
+html {
+  @include box-sizing(border-box);
+}
+
+*,
+*:after,
+*:before {
+  @include box-sizing(inherit);
+}
+
+body {
+  font-family: $primary_font;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    padding: 1.4rem 0;
+  }
+}
+
+.oculto {
+  display: none;
+}
+
+.centrado {
+  text-align: center;
+}
+
+.carrito-compras {
+  position: relative;
+
+  &:hover .contenido {
+    position: absolute;
+    display: block;
+    right: 0;
+    background: $gray;
+    padding: 1rem;
+    max-width: 400px;
+
+    img {
+      max-width: 150px;
+    }
+
+    .boton {
+      @include boton($secondary);
+    }
+  }
+}
+
+.hero {
+  min-height: 24rem;
+  @include background-image('../img/hero.jpg');
+  background-size: cover;
+  color: $white;
+  display: flex;
+  align-items: center;
+
+  .contenido-hero {
+    h2 {
+      font-weight: 400;
+      font-size: 2.6rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    form {
+      position: relative;
+
+      @include tablet() {
+        width: 40%;
+      }
+
+      input[type="submit"] {
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        @include background-image('../img/lupa.png');
+        
+        background-position-x: right;
+        width: 3rem;
+        height: 3rem;
+        text-indent: -9999px;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        height: 3rem;
+      }
+    }
+  }
+}
+
+.barra {
+  min-height: 5rem;
+  color: $white;
+
+  @include gradient($secondary, $tertiary);
+
+  .iconos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.4rem 0;
+
+    @include desktop() {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icono {
+      flex-grow: 1;
+      background-size: 2.4rem;
+
+      &.icono1 {
+        @include background-image('../img/icono1.png');
+        
+        background-position: left center;
+      }
+
+      &.icono2 {
+        @include background-image('../img/icono2.png');
+        
+        background-position: left center;
+      }
+
+      &.icono3 {
+        @include background-image('../img/icono3.png');
+
+        background-position: left center;
+      }
+    }
+  }
+}
+
+.cursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .curso {
+    flex: 0 1 calc(50% - .5rem);
+    border: 1px solid darken($color: $gray, $amount: 10);
+    margin-bottom: 1rem;
+
+    .imagen-curso {
+      width: 100%;
+    }
+
+    @include tablet() {
+      flex: 0 1 calc(33% - .5rem);
+    }
+
+    @include desktop() {
+      flex: 0 1 calc(25% - .5rem);
+    }
+  }
+}
+
+.info-curso {
+  padding: 1rem;
+
+  h4 {
+    margin: 0;
+    font-size: 1rem;
+    min-height: 66px;
+  }
+
+  .precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .regular {
+      color: red;
+      text-decoration: line-through;
+    }
+
+    .oferta {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+
+  .boton {
+    @include boton($primary);
+  }
+}
+
+.footer {
+  border-top: 1px solid darken($color: $gray, $amount: 10);
+  margin-top: 1rem;
+  padding: 2rem 0;
+
+  .contenedor-footer {
+    display: flex;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 calc(50% - .5rem);
+
+  @include tablet() {
+    flex: 0 1 calc(33% - .5rem);
+  }
+
+  a {
+    color: $black;
+    text-decoration: none;
+    margin-bottom: .5rem;
+  }
+}
